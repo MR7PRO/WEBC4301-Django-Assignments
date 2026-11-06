@@ -47,7 +47,7 @@ This log distinguishes **historical GitHub commits** from **locally observed pro
 | 151-character address | Rejected with Django field error |
 | Empty required form | Browser required-field warning observed |
 
-**Evidence:** local screenshots reviewed during the assignment walkthrough. Screenshots should be copied into reviewed documentation folders before publication, with personal data and real faces removed/redacted. The code was still uncommitted in the original local working tree at the time of this review.
+**Evidence:** reviewed local browser screenshots are published in [`docs/screenshots/assignment-03/`](screenshots/assignment-03/), including successful registration and the 151-character address validation error. The source was consolidated in the new repository on November 6, 2026. The author deliberately retained original Assignment 01 identity details; permission for any third-party portrait remains a separate publication consideration.
 
 ## November 6, 2026 — New repository and clean local verification
 
@@ -60,14 +60,19 @@ This log distinguishes **historical GitHub commits** from **locally observed pro
 - Opened and visually reviewed Assignment 01 route `/` with its existing context values and styling.
 - Opened Assignment 02 route `/home/`; the fresh database first had no profiles, then a local `Demo Profile` entry was created in `StudentProfile` and shown successfully (without an uploaded photo).
 - Added screenshots for Assignment 01, Assignment 02, and Assignment 03 to the documentation package.
-- **Still pending:** final source/settings check, publisher confirmation about third-party portraits, Git stage/commit, and GitHub publication.
+- Checked `.gitignore` exclusions, verified `SECRET_KEY` is not a hardcoded constant, ran `python manage.py check`, and inspected the staged files.
+- Created and pushed [initial commit `b36d7ef`](https://github.com/MR7PRO/WEBC4301-Django-Assignments/commit/b36d7efb13843a464597e8072bb2f13e7db47168) to `main`; confirmed local and remote branches were synchronized with a clean working tree.
+- Verified via the connected GitHub repository that the README, assignment documents, migrations, and five screenshot files are published.
+- **Still pending:** permission confirmation for any third-party portrait and formal instructor submission.
 
 See [Fresh Setup Verification](FRESH_SETUP_VERIFICATION.md) for detailed command outputs.
 
-## Remaining release tasks
+## Final publication status
 
-1. Confirm publication of the original identity details and right to display any portrait in screenshots.
-2. Check the local `project/settings.py` for a non-hardcoded secret key and verify the app is for local development only.
-3. Stage only reviewed source and documentation; inspect `git diff --cached --name-only` and `git diff --cached --check`.
-4. Commit and push with the real November 2026 commit timestamp.
-5. Verify the GitHub README, screenshot links, and project paths.
+- [x] Owner chose to keep the original Assignment 01 identity details in the public academic repository.
+- [x] Verified that `project/settings.py` does not contain a literal `SECRET_KEY`; the settings and development server remain for local coursework use only.
+- [x] Staged reviewed application source, migrations, documentation, and screenshots, excluding local database and uploads.
+- [x] Published the real initial commit on `main`: [`b36d7ef`](https://github.com/MR7PRO/WEBC4301-Django-Assignments/commit/b36d7efb13843a464597e8072bb2f13e7db47168).
+- [x] Verified that the published GitHub tree contains the README, required application files, assignment documents, and all five screenshot paths.
+- [ ] Confirm publication rights for any recognizable third-party portrait in the screenshots.
+- [ ] Submit the repository link and required proof to the instructor.

@@ -134,7 +134,7 @@ The earlier repository remains unchanged and available for auditing: [django-tem
 - [Oct 16 · README and screenshots](https://github.com/MR7PRO/django-templates-context-assignment-/commit/ce33340fd5)
 - [Oct 27 · Models, Admin, and UI](https://github.com/MR7PRO/django-templates-context-assignment-/commit/711b95fdd9)
 
-The third assignment was implemented and tested locally on Nov 6; the new repository commit should reflect the **actual publication date**, not be backdated. The current repository begins as a clean snapshot, while the older repository preserves independent historical evidence.
+The third assignment was implemented and manually tested on Nov 6, 2026. The new repository was published with its own genuine [initial commit `b36d7ef`](https://github.com/MR7PRO/WEBC4301-Django-Assignments/commit/b36d7efb13843a464597e8072bb2f13e7db47168), not backdated. The current repository begins as a clean snapshot, while the older repository preserves independent historical evidence.
 
 ## Privacy and academic transparency
 

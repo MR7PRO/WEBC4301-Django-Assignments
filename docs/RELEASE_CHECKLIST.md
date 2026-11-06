@@ -1,6 +1,6 @@
 # Release and Submission Checklist
 
-Status as observed November 6, 2026. A checked item is supported by the user-provided local terminal output; unchecked items are not yet verified in this clean copy.
+Status after first GitHub publication on November 6, 2026. Checks are based on user-provided terminal output, local screenshots, and the published GitHub repository tree. These are manual checks, not an automated test suite.
 
 - [x] Create a new, separate GitHub repository: [`MR7PRO/WEBC4301-Django-Assignments`](https://github.com/MR7PRO/WEBC4301-Django-Assignments).
 - [x] Clone an empty new repository without reusing old Git history.
@@ -18,11 +18,12 @@ Status as observed November 6, 2026. A checked item is supported by the user-pro
 - [x] Place three Assignment 03 screenshot files in `docs/screenshots/assignment-03/`.
 - [x] Visually inspect all three Assignment 03 screenshots for expected validation and registration output.
 - [x] Add visual evidence for Assignment 01 and Assignment 02 (profile from a local test record).
-- [ ] Final publisher confirmation regarding visibility of original personal data and right to share portrait imagery.
+- [x] Owner approved retaining original Assignment 01 identity details in the public repository.
+- [ ] Confirm the rights to publish any third-party portrait visible in a screenshot.
 - [x] Verify `.gitignore` excludes `.venv/`, `db.sqlite3`, and `media/` via `git check-ignore -v`; inspect full untracked file list.
-- [ ] Inspect final staged files before commit; verify source/settings and README links.
-- [ ] Commit only source, migrations, docs and reviewed test assets to `main`.
-- [ ] Verify the README and links after publishing to GitHub.
+- [x] Inspect final staged files, source/settings, and README links before first publication.
+- [x] Commit source, migrations, docs, and reviewed test assets to `main` (`b36d7ef`).
+- [x] Verify published GitHub README and referenced screenshot paths in the repository tree.
 - [x] Confirm repository is public and the owner chose to retain original coursework identity details.
 - [ ] Confirm that third-party portraits, if any, are authorized for public display.
 - [ ] Submit the repository link and any screenshots required by the instructor.
