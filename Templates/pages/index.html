@@ -1,0 +1,42 @@
+
+{% extends 'pages/base.html' %}
+
+{% block content %}
+
+    <h3>Personal Details</h3>
+
+    <div class="info-box">
+
+        <!-- هان بنعرض بيانات الطالب من الـ Context -->
+
+        <div class="info-item">
+            <span class="label">Full Name:</span>
+            {{ first_name|capfirst|add:" "|add:last_name }}
+        </div>
+
+        <div class="info-item">
+            <span class="label">Student ID:</span>
+            {{ student_id|stringformat:"s" }}
+        </div>
+
+        <div class="info-item">
+            <span class="label">Address:</span>
+            {{ address|upper }}
+        </div>
+
+        <div class="info-item">
+            <span class="label">Email:</span>
+            {{ email|default:"Not provided" }}
+        </div>
+
+        <div class="info-item">
+            <span class="label">Time Since Birth:</span>
+            {{ date_of_birth|timesince }} ago
+        </div>
+
+    </div>
+
+    <!-- هان بنستدعي الفوتر -->
+    {% include 'pages/footer.html' %}
+
+{% endblock content %}

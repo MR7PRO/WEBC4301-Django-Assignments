@@ -1,0 +1,139 @@
+
+{% extends 'pages/base.html' %}
+
+{% block content %}
+
+<h3>Registered Students</h3>
+
+<p>Students saved in the database.</p>
+
+<!-- زر الرجوع لصفحة تسجيل طالب جديد -->
+<a href="{% url 'add_student' %}" class="add-btn">
+    Add New Student
+</a>
+
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>University ID</th>
+                <th>National ID</th>
+                <th>Mobile Number</th>
+                <th>Address</th>
+                <th>Date of Birth</th>
+                <th>Image</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <!-- هان بنعرض الطلاب من قاعدة البيانات -->
+            {% for student in students %}
+            <tr>
+                <td>{{ student.full_name }}</td>
+                <td>{{ student.university_id }}</td>
+                <td>{{ student.national_id }}</td>
+                <td>{{ student.mobile_number }}</td>
+                <td>{{ student.address }}</td>
+                <td>{{ student.date_of_birth|date:"Y-m-d" }}</td>
+                <td>
+                    {% if student.image %}
+                        <img src="{{ student.image.url }}"
+                             alt="{{ student.full_name }}">
+                    {% else %}
+                        No Image
+                    {% endif %}
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="7">No students registered yet.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<style>
+    /* هان بنوسع صفحة الجدول بدون تغيير باقي الصفحات */
+    .container {
+        max-width: 1400px;
+        width: 96%;
+        padding: 25px;
+    }
+
+    .add-btn {
+        display: inline-block;
+        background-color: #b68b00;
+        color: white;
+        padding: 12px 18px;
+        border-radius: 5px;
+        text-decoration: none;
+        margin: 15px 0;
+    }
+
+    .add-btn:hover {
+        background-color: #917000;
+    }
+
+    .table-container {
+        width: 100%;
+        margin-top: 15px;
+    }
+
+    table {
+        width: 100%;
+        min-width: 0;
+        table-layout: fixed;
+        border-collapse: collapse;
+        font-size: 13px;
+    }
+
+    th, td {
+        border: 1px solid #ddd;
+        padding: 10px 5px;
+        text-align: center;
+        overflow-wrap: anywhere;
+        vertical-align: middle;
+    }
+
+    th {
+        background-color: #b68b00;
+        color: white;
+    }
+
+    tr:nth-child(even) {
+        background-color: #fff8e6;
+    }
+
+    td img {
+        width: 50px;
+        height: 50px;
+        max-width: 100%;
+        border-radius: 5px;
+        object-fit: cover;
+    }
+
+    /* للشاشات الصغيرة بنصغر الخط والمسافات */
+    @media (max-width: 768px) {
+        .container {
+            width: 100%;
+            padding: 12px;
+        }
+
+        table {
+            font-size: 10px;
+        }
+
+        th, td {
+            padding: 6px 2px;
+        }
+
+        td img {
+            width: 35px;
+            height: 35px;
+        }
+    }
+</style>
+
+{% endblock %}

@@ -1,0 +1,24 @@
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# PyCharm
+.idea/
+
+# Local database
+db.sqlite3
+db.sqlite3-journal
+
+# Environment files
+.env
+.env.*
+
+# Uploaded images
+media/
+student_photos/

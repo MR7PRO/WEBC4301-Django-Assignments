@@ -1,0 +1,56 @@
+
+{% extends 'pages/base.html' %}
+
+{% block content %}
+
+<h3>Student Registration Form</h3>
+
+<p>Please fill in the student information below.</p>
+
+<!-- هان بنرسل البيانات والصورة للفيو -->
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <button type="submit">Save Student</button>
+</form>
+
+<style>
+    form {
+        margin-top: 20px;
+    }
+
+    form p {
+        margin-bottom: 15px;
+    }
+
+    form label {
+        display: block;
+        margin-bottom: 6px;
+        font-weight: bold;
+    }
+
+    form input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    form button {
+        background-color: #b68b00;
+        color: white;
+        border: none;
+        padding: 12px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .errorlist {
+        color: red;
+        font-size: 14px;
+    }
+</style>
+
+{% endblock %}

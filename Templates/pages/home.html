@@ -1,0 +1,38 @@
+{% extends 'pages/base.html' %}
+
+{% block content %}
+<div style="background-color: #0a0a0a; min-height: 100vh; padding: 50px 20px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #fff;">
+
+    <div style="text-align: center; margin-bottom: 40px;">
+        <h1 style="color: #D4AF37; text-transform: uppercase; letter-spacing: 2px; text-shadow: 0 2px 4px rgba(212, 175, 55, 0.3);">Student Information</h1>
+        <p style="color: #f0e6d2; font-size: 1.2rem;">Under Supervision of <span style="color: #D4AF37; font-weight: bold;">Dr. Alaa Al-Hout</span></p>
+    </div>
+
+    <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 30px;">
+
+        {% for student in students %}
+        <div style="background: linear-gradient(145deg, #1a1a1a, #262626); border: 1px solid #D4AF37; border-radius: 15px; width: 350px; box-shadow: 0 10px 25px rgba(212, 175, 55, 0.15); overflow: hidden; text-align: center; padding-bottom: 25px;">
+
+            {% if student.photo %}
+                <img src="{{ student.photo.url }}" alt="{{ student.full_name }}" style="width: 100%; height: 300px; object-fit: cover; border-bottom: 3px solid #D4AF37;">
+            {% else %}
+                <div style="width: 100%; height: 300px; background-color: #333; color: #D4AF37; display: flex; align-items: center; justify-content: center; border-bottom: 3px solid #D4AF37; font-size: 1.2rem;">لا توجد صورة مرفوعة</div>
+            {% endif %}
+
+            <h2 style="color: #D4AF37; margin: 20px 0 5px 0; font-size: 1.8rem;">{{ student.full_name }}</h2>
+            <p style="color: #aaa; margin: 0; font-size: 14px; letter-spacing: 1px;"><strong>ID:</strong> {{ student.university_id }}</p>
+
+            <hr style="margin: 20px auto; width: 75%; border: 0; border-top: 1px solid #D4AF37;">
+
+            <div style="text-align: left; padding: 0 30px; line-height: 1.8; color: #eee; font-size: 15px;">
+                <p style="margin: 8px 0;"><strong style="color: #D4AF37;">Age:</strong> {{ student.age }}</p>
+                <p style="margin: 8px 0;"><strong style="color: #D4AF37;">Date of Birth:</strong> {{ student.date_of_birth }}</p>
+                <p style="margin: 8px 0;"><strong style="color: #D4AF37;">Address:</strong> {{ student.address }}</p>
+                <p style="margin: 8px 0;"><strong style="color: #D4AF37;">Salary:</strong> ${{ student.salary }}</p>
+            </div>
+        </div>
+        {% endfor %}
+
+    </div>
+</div>
+{% endblock %}
