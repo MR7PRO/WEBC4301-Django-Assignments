@@ -98,10 +98,16 @@ class StudentForm(forms.ModelForm):
     def clean_image(self):
         image = self.cleaned_data['image']
 
-        # بنقبل صور JPG وPNG بس
+        # هان بنتأكد من امتداد الملف
         if not image.name.lower().endswith(('.jpg', '.jpeg', '.png')):
             raise forms.ValidationError(
                 'Only JPG and PNG images are allowed.'
+            )
+
+        # هان بنفحص نوع الصورة الحقيقي، مش الاسم بس
+        if image.image.format not in ('JPEG', 'PNG'):
+            raise forms.ValidationError(
+                'Image content must be JPG or PNG.'
             )
 
         return image
